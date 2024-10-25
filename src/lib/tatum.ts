@@ -7,4 +7,5 @@ const getTatumClient = <T extends ITatumSdkChain>(network: Network) =>
     apiKey: { v4: env.VITE_TATUM_API_KEY },
   });
 
-export const tatumEthereumClient = () => getTatumClient<Ethereum>(Network.ETHEREUM)
+export const tatumEthereumClient = () =>
+  getTatumClient<Ethereum>(Network.ETHEREUM);

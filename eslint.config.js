@@ -19,4 +19,9 @@ export default [
   ...preact.configs.recommended,
   // tanstack-query
   ...pluginQuery.configs['flat/recommended'],
+  {
+    rules: {
+      "react/prop-types": "off"
+    }
+  }
 ];

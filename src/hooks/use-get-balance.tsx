@@ -4,7 +4,7 @@ import { isAddress } from "ethers";
 
 export const useGetBalance = () => {
   return useMutation({
-    mutationKey: ['get-balance'],
+    mutationKey: ["get-balance"],
     mutationFn: async (address: string) => {
       if (!isAddress(address)) throw new Error("Invalid address");
 
@@ -23,7 +23,7 @@ export const useGetBalance = () => {
       return balance.data[0];
     },
     onError: (error) => {
-        console.error(error)
-    }
+      console.error(error);
+    },
   });
 };

@@ -4,12 +4,12 @@ import { useMemo, useState } from "react";
 function Form() {
   const [inputValue, setInputValue] = useState(""); // State to hold the input value
 
-  const {data, isPending, isIdle, mutate} = useGetBalance()
+  const { data, isPending, isIdle, mutate } = useGetBalance();
 
   const balance = useMemo(() => {
-    if(!data) return null;
-    return `${data.balance} ${data.asset ?? ''}`
-  }, [data])
+    if (!data) return null;
+    return `${data.balance} ${data.asset ?? ""}`;
+  }, [data]);
 
   return (
     <div className="flex flex-col gap-6 items-start">
@@ -25,7 +25,6 @@ function Form() {
       <button onClick={() => mutate(inputValue)} style={{ padding: "5px" }}>
         Click Me
       </button>
-      
     </div>
   );
 }

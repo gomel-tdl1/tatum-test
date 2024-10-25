@@ -1,4 +1,4 @@
 export const routes: Record<string, string> = {
-    home: '/',
-    balance: '/balance',
-}
+  home: "/",
+  balance: "/balance",
+};

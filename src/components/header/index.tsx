@@ -20,7 +20,7 @@ export function Header() {
               href={c.href}
               className={cn(
                 "md:text-[16px] text-[18px] font-[500] text-neutral_1 hover:text-primary_2 transition-all",
-                url === c.href && "text-primary_1"
+                url === c.href && "text-primary_1",
               )}
             >
               {c.title}
