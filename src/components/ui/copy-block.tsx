@@ -19,12 +19,14 @@ export const CopyBlock: FC<ICopyBlock> = ({ text, className, ...props }) => {
   return (
     <div
       className={cn(
-        "bg-neutral_2 rounded-[5px] p-[14px] w-[280px] font-inconsolata text-primary_3 flex items-center justify-between",
+        "bg-neutral_2 rounded-[5px] py-[14px] px-5 w-[280px] font-inconsolata text-primary_3 flex items-center justify-between",
         className,
       )}
       {...props}
     >
-      <p ref={ref}>{text}</p>
+      <p ref={ref} className="w-[210px] overflow-hidden whitespace-nowrap">
+        {text}
+      </p>
       <img
         src={CopyIcon}
         alt="copy"
