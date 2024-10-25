@@ -1,6 +1,7 @@
 // App.js
 import { Network, TatumSDK, Ethereum } from "@tatumio/tatum";
 import React, { useState } from "react";
+import { env } from "../../env";
 
 function Form() {
   const [inputValue, setInputValue] = useState(""); // State to hold the input value
@@ -9,7 +10,7 @@ function Form() {
   const handleButtonClick = async () => {
     const tatum = await TatumSDK.init<Ethereum>({
       network: Network.ETHEREUM,
-      apiKey: { v4: "t-65ddbb2bb792d6001be685d9-442dd087e58442acac87f5f9" },
+      apiKey: { v4: env.VITE_TATUM_API_KEY },
       verbose: true,
     });
     const balance = await tatum.address.getBalance({

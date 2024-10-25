@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
 	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 	line-height: 1.5;
@@ -66,5 +70,11 @@ main {
 	:root {
 		color: #ccc;
 		background-color: #1a1a1a;
+	}
+}
+
+@layer base {
+  :root {
+		--radius: 0.5rem;
 	}
 }

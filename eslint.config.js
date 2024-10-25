@@ -6,11 +6,11 @@ import preact from "@notwoods/eslint-config-preact";
 
 
 export default [
-  {files: ["**/*.{js,jsx,mjs,cjs,ts,tsx}"]},
+  {files: ["**/*.{ts,tsx}"]},
   {languageOptions: { globals: globals.browser }},
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   eslintConfigPrettier,
   preact.configs.base,
-  ...preact.configs.recommended,
+  ...preact.configs.recommended
 ];
