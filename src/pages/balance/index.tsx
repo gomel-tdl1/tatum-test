@@ -1,5 +1,5 @@
 import { FadeInWhenVisible } from "@/components/fades";
-import Form from "./form";
+import Form from "@/pages/balance/form";
 import { Toaster } from "@/components/ui/sonner";
 
 export function Balance() {
