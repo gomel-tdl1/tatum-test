@@ -10,12 +10,8 @@ import "./style.css";
 
 const queryClient = new QueryClient();
 
-const Home = lazy(() =>
-  import("@/pages/home"),
-);
-const Balance = lazy(() =>
-  import("@/pages/balance"),
-);
+const Home = lazy(() => import("@/pages/home"));
+const Balance = lazy(() => import("@/pages/balance"));
 
 export function App() {
   return (
