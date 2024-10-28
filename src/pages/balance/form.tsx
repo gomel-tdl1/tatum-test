@@ -3,15 +3,22 @@ import { Input } from "@/components/ui/input";
 import { useGetBalance } from "@/hooks/use-get-balance";
 import { useMemo, useState } from "react";
 import Loader from "@/assets/loader.svg";
+import { numericStringToFixedNoRounding } from "@/lib/utils";
 
 function Form() {
   const [inputValue, setInputValue] = useState(""); // State to hold the input value
 
   const { data, isPending, mutate } = useGetBalance();
 
+  const isAddressSameAsFetched = useMemo(
+    () => inputValue.toLowerCase() === data?.address.toLowerCase(),
+    [inputValue, data],
+  );
+
+  // Convert balance data from Tatum API to readable format
   const balance = useMemo(() => {
     if (!data) return null;
-    return `${data.balance} ${data.asset ?? ""}`;
+    return `${numericStringToFixedNoRounding(data.balance, 6)} ${data.asset ?? ""}`;
   }, [data]);
 
   return (
@@ -19,7 +26,7 @@ function Form() {
       <Input
         type="text"
         value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
+        onChange={(e) => setInputValue((e.target as HTMLInputElement).value)}
         placeholder="Enter ETH wallet address to get balance"
       />
       <Button
@@ -29,7 +36,7 @@ function Form() {
         onClick={() => mutate(inputValue)}
       >
         {isPending && <img src={Loader} alt="loader" className="h-2" />}
-        {!isPending && <>Click Me</>}
+        {!isPending && isAddressSameAsFetched ? "Update" : "Click Me"}
       </Button>
       {balance && (
         <p className="text-[18px]">
