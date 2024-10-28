@@ -1,6 +1,6 @@
 # Tatum test task
 
-## [Demo](https://duckduckgo.com)
+## [Demo](https://tatum-test.netlify.app/)
 
 ## Getting Started
 
