@@ -1,6 +1,7 @@
 import { tatumEthereumClient } from "@/lib/tatum";
 import { useMutation } from "@tanstack/react-query";
 import { isAddress } from "ethers";
+import { toast } from "sonner";
 
 export const useGetBalance = () => {
   return useMutation({
@@ -23,7 +24,7 @@ export const useGetBalance = () => {
       return balance.data[0];
     },
     onError: (error) => {
-      console.error(error);
+      toast.error(error.message);
     },
   });
 };

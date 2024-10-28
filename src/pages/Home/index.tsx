@@ -1,6 +1,7 @@
 import { FadeInWhenVisible } from "@/components/fades";
 import { Button } from "@/components/ui/button";
 import { CopyBlock } from "@/components/ui/copy-block";
+import { TATUM_HOME_LINK } from "@/constants/links";
 
 export function Home() {
   return (
@@ -18,7 +19,12 @@ export function Home() {
         <div className="flex items-center md:flex-row flex-col gap-4">
           <CopyBlock text="npm i @tatumio/tatum" />
 
-          <Button>Get Started</Button>
+          <Button
+            size="lg"
+            onClick={() => window.open(TATUM_HOME_LINK, "_blank")}
+          >
+            Get Started
+          </Button>
         </div>
       </div>
     </FadeInWhenVisible>

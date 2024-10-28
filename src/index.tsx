@@ -3,8 +3,10 @@ import { LocationProvider, Router, Route } from "preact-iso";
 
 import { Header } from "./components/header/index.js";
 import { Home } from "./pages/home/index.js";
+import { Balance } from "./pages/balance/index.js";
 import { NotFound } from "./pages/_404.jsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { routes } from "./constants/routes.js";
 
 import "./style.css";
 
@@ -17,7 +19,8 @@ export function App() {
         <Header />
         <main>
           <Router>
-            <Route path="/" component={Home} />
+            <Route path={routes.home} component={Home} />
+            <Route path={routes.balance} component={Balance} />
             <Route default component={NotFound} />
           </Router>
         </main>

@@ -21,9 +21,11 @@
 		"framer-motion": "^11.11.10",
 		"lucide-react": "^0.453.0",
 		"mongodb": "^3.0.0",
+		"next-themes": "^0.3.0",
 		"preact": "^10.22.1",
 		"preact-iso": "^2.6.3",
 		"preact-render-to-string": "^6.5.11",
+		"sonner": "^1.5.0",
 		"tailwind-merge": "^2.5.4",
 		"tailwindcss-animate": "^1.0.7",
 		"zod": "^3.23.8"
