@@ -2,7 +2,7 @@ import { FadeInWhenVisible } from "@/components/fades";
 import Form from "@/pages/balance/form";
 import { Toaster } from "@/components/ui/sonner";
 
-export function Balance() {
+export default function Balance() {
   return (
     <FadeInWhenVisible>
       <div className="flex flex-col gap-4 items-center pt-40">

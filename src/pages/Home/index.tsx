@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { CopyBlock } from "@/components/ui/copy-block";
 import { TATUM_HOME_LINK } from "@/constants/links";
 
-export function Home() {
+export default function Home() {
   return (
     <FadeInWhenVisible>
       <div className="flex flex-col gap-6 items-center pt-40 lg:max-w-[1280px] max-w-[90%] mx-auto">

@@ -11,10 +11,10 @@ import "./style.css";
 const queryClient = new QueryClient();
 
 const Home = lazy(() =>
-  import("@/pages/home").then((module) => module.Home),
+  import("@/pages/home"),
 );
 const Balance = lazy(() =>
-  import("@/pages/balance").then((module) => module.Balance),
+  import("@/pages/balance"),
 );
 
 export function App() {
