@@ -1,16 +1,21 @@
 import { render } from "preact";
-import { LocationProvider, Router, Route } from "preact-iso";
+import { LocationProvider, Router, Route, lazy } from "preact-iso";
 
-import { Header } from "./components/header/index.js";
-import { Home } from "./pages/home/index.js";
-import { Balance } from "./pages/balance/index.js";
-import { NotFound } from "./pages/_404.jsx";
+import { Header } from "./components/header/index";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { routes } from "./constants/routes.js";
+import { NotFound } from "./pages/_404";
 
 import "./style.css";
 
 const queryClient = new QueryClient();
+
+const Home = lazy(() =>
+  import("./pages/home/index").then((module) => module.Home),
+);
+const Balance = lazy(() =>
+  import("./pages/balance/index").then((module) => module.Balance),
+);
 
 export function App() {
   return (
@@ -19,8 +24,8 @@ export function App() {
         <Header />
         <main>
           <Router>
-            <Route path={routes.home} component={Home} />
-            <Route path={routes.balance} component={Balance} />
+            <Home path={routes.home} />
+            <Balance path={routes.balance} />
             <Route default component={NotFound} />
           </Router>
         </main>

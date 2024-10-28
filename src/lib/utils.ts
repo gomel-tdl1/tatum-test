@@ -6,7 +6,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const sleep = (delay: number) =>
-  new Promise((res) => setTimeout(() => res(""), delay));
+  new Promise((res) => setTimeout(res, delay));
 
 export const numericStringToFixedNoRounding = (
   num: string,
