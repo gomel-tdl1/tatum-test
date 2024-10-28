@@ -37,7 +37,7 @@ function Form() {
         onClick={() => mutate(addressInput)}
       >
         {isPending && <img src={Loader} alt="loader" className="h-2" />}
-        {!isPending && isAddressSameAsFetched ? "Update" : "Click Me"}
+        {!isPending && (isAddressSameAsFetched ? "Update" : "Click Me")}
       </Button>
       {balance && (
         <p className="text-[18px]">
